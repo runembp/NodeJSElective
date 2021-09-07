@@ -13,7 +13,7 @@ console.log(letters[1])
 // Exercise 2 - Array Positioning
 
 const friends = [];
-friends.push({name: "Derpy"}, {name: "Burpy"}, {name: "Herpy"})
+friends.push({name: "Bob"}, {name: "Billy"}, {name: "Boo"})
 
 friends.forEach(x => console.log(x))
 
@@ -59,7 +59,10 @@ console.log(diet);
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-const dinnerTray = diet;
+const dinnerTrayAlternative = [...diet];
+const dinnerTray = Array.from(diet); // Korrekt - her oprettes et nyt array og kopierer alle values.
+//const dinnerTray = diet; Copy by reference!! Så hvis det oprindelige Array ændres, så vil disse ændringer også reflekteres i det nuværende
+
 console.log(dinnerTray);
 
 // --------------------------------------
@@ -85,8 +88,7 @@ const discardedNumbers = [];
 // else push them to the array discardedNumbers
 
 numbers.forEach(x => {
-    if(x > 6 || x < 0)
-    {
+    if (x > 6 || x < 0) {
         console.log(x)
     }
     else {
@@ -97,5 +99,3 @@ numbers.forEach(x => {
 console.log(discardedNumbers)
 
 // --------------------------------------
-
-
