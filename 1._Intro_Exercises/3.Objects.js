@@ -14,12 +14,12 @@ console.log(myObj.message);
 
 // Create an object that has your name and age. 
 
-const runeObject = {
-    name: "Rune",
-    age: "36"
+const frodoObject = {
+    name: "Frodo",
+    age: "75"
 }
 
-console.log(runeObject)
+console.log(frodoObject)
 
 // --------------------------------------
 // Exercise 3 - Add a property 
@@ -28,7 +28,7 @@ const stackOverflow = {
     isAllowed: true
 };
 
-console.log(`Stackoverflow is allowed: ${stackOverflow.isAllowed}`)
+console.log(`Stackoverflow is allowed: ${stackOverflow.isAllowed}`);
 
 // make a rule called isAllowed and let the value be true
 
