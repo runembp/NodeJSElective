@@ -2,7 +2,12 @@ const express = require("express")
 const app = express()
 
 app.get("/", (req,res) => {
-    res.send("Endpoints available: /time, /dayofweek, /month")
+    res.send("Endpoints available: /date, /time, /dayofweek, /month")
+})
+
+app.get("/date", (req, res) => {
+    const date = new Date()
+    res.send({day: new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date)});
 })
 
 app.get("/time", (req, res) => {
@@ -13,7 +18,8 @@ app.get("/time", (req, res) => {
 app.get("/dayofweek", (req, res) => {
     const date = new Date()
     const weekDays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-    res.send(`Current Day of week: ${weekDays[date.getDay()]}`)
+    res.send({day: weekDays[date.getDay()]})
+    //res.send(`Current Day of week: ${weekDays[date.getDay()]}`)
 })
 
 app.get("/month", (req, res) => {
