@@ -8,6 +8,7 @@ app.get("/", (req,res) => {
 app.get("/date", (req, res) => {
     const date = new Date()
     res.send({day: new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date)});
+    res.send({day: new date.toLocaleDateString('dk-DK', {weekday: 'long'}).format(date)});
 })
 
 app.get("/time", (req, res) => {
